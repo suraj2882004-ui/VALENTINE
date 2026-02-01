@@ -1,4 +1,4 @@
-// Simple interactions + confetti + evasive "No" button
+// Simple interactions + confetti + evasive "No" button + reveal photo
 const askBtn = document.getElementById('askBtn');
 const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeBtn');
@@ -61,7 +61,21 @@ yesBtn.addEventListener('click', () => {
   yesBtn.disabled = true;
   noBtn.disabled = true;
   runConfetti(150);
+  // Reveal the uploaded photo (assets/photo1.jpg)
+  revealPhotoOnce();
 });
+
+function revealPhotoOnce(){
+  // prevent adding multiple times
+  if(document.querySelector('.reveal-photo')) return;
+  const img = document.createElement('img');
+  img.src = 'assets/photo1.jpg';
+  img.alt = 'A special photo';
+  img.className = 'reveal-photo';
+  // insert after the message paragraph
+  const reference = loveMsgEl;
+  reference.insertAdjacentElement('afterend', img);
+}
 
 // Quick way to set names/messages by editing these variables:
 const recipientName = "Vimanshi";   // changed
