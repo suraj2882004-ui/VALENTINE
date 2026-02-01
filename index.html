@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will you be my Valentine?</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg">
+    <div class="hearts" aria-hidden="true"></div>
+  </div>
+
+  <main class="card">
+    <h1 class="title">Will you be my Valentine?</h1>
+    <p class="subtitle">A little surprise for someone very special</p>
+
+    <button id="askBtn" class="cta">Ask her</button>
+
+    <footer class="from">— <span id="senderName">Someone special</span></footer>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h2 id="modalTitle">Dear <span id="recipientName">[Her Name]</span> ❤️</h2>
+      <p id="loveMsg">I really like you, and I was wondering... would you be my valentine?</p>
+
+      <div class="modal-actions">
+        <button id="yesBtn" class="btn-yes">Yes 💖</button>
+        <button id="noBtn" class="btn-no" aria-label="No">No 😔</button>
+      </div>
+
+      <button class="close" id="closeBtn" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
